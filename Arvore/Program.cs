@@ -21,30 +21,46 @@ namespace Arvore
 
         static void Main(string[] args)
         {
-            string show = null;
             int[] myIntArray = new int[6] { 3, 2, 1, 6, 0, 5 };
 
             var maxValue = myIntArray.Max();
             int maxIndex = myIntArray.ToList().IndexOf(maxValue);
-            show = $"   {maxValue}";
             // changing array to list to use linq
 
             var arrayList = myIntArray.ToList();
             var rightArray = arrayList.GetRange(0, maxIndex).ToArray();
             var leftArray  = arrayList.Skip(maxIndex+1).ToArray();
 
-            print(maxIndex, show);
+            for (int i = 0; i < myIntArray.Length; i++)
+            {
+                if (i==0)
+                {
+                    Console.Write("".PadRight(myIntArray.Length));
+                    Console.WriteLine($"{maxValue}");
+                }
 
-            spaceRight(maxIndex, rightArray, rightArray.Length);
-            spaceLeft(maxIndex, leftArray, leftArray.Length);
+                if (i < rightArray.Length)
+                {
+                    Console.Write("".PadRight(myIntArray.Length - i - 1));
+                    Console.Write($"{rightArray[i]}");
+                }
 
+                if (i < leftArray.Length)
+                {
+
+                    Console.Write("".PadLeft(i + 1 + leftArray.ToList().IndexOf(leftArray[i])));
+                    Console.Write($"{leftArray[i]}");
+
+                }
+
+                Console.WriteLine("");
+            }
 
         }
 
         public static void print(int index,dynamic obj)
         {
-            Console.Write("".PadLeft(index));
-            Console.WriteLine($"{obj}");
+     
         }  
         public static void spaceRight(int index,dynamic obj, int index2)
         {
