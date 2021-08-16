@@ -58,29 +58,7 @@ namespace Arvore
 
         }
 
-        public static void print(int index,dynamic obj)
-        {
      
-        }  
-        public static void spaceRight(int index,dynamic obj, int index2)
-        {
-            for (int i = 0; i < index2; i++)
-            {
-                Console.Write("".PadRight(index-i));
-                Console.WriteLine($"{obj[i]}");
-            }
-
-        }
-
-        public static void spaceLeft(int index, dynamic obj, int index2)
-        {
-            for (int i = 0; i < index2; i++)
-            {
-                Console.Write("".PadLeft(index + i));
-                Console.WriteLine($"{obj[i]}");
-            }
-
-        }
 
     }
 }
