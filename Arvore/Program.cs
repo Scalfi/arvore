@@ -28,8 +28,8 @@ namespace Arvore
             // changing array to list to use linq
 
             var arrayList = myIntArray.ToList();
-            var rightArray = arrayList.GetRange(0, maxIndex).ToArray();
-            var leftArray  = arrayList.Skip(maxIndex+1).ToArray();
+            var rightArray = arrayList.GetRange(0, maxIndex).OrderByDescending(a=> a).ToArray();
+            var leftArray  = arrayList.Skip(maxIndex+1).OrderByDescending(a => a).ToArray();
 
             for (int i = 0; i < myIntArray.Length; i++)
             {
