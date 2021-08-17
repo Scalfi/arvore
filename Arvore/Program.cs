@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 
 
@@ -21,44 +22,73 @@ namespace Arvore
 
         static void Main(string[] args)
         {
-            int[] myIntArray = new int[6] { 3, 2, 1, 6, 0, 5 };
+            int[] array1 = new int[6] { 3, 2, 1, 6, 0, 5 };
+            int[] array2 = new int[7] { 7, 5, 13, 9, 1, 6, 4 };
 
-            var maxValue = myIntArray.Max();
-            int maxIndex = myIntArray.ToList().IndexOf(maxValue);
-            // changing array to list to use linq
+            printArvoce(array1);
 
-            var arrayList = myIntArray.ToList();
-            var rightArray = arrayList.GetRange(0, maxIndex).OrderByDescending(a=> a).ToArray();
-            var leftArray  = arrayList.Skip(maxIndex+1).OrderByDescending(a => a).ToArray();
-
-            for (int i = 0; i < myIntArray.Length; i++)
-            {
-                if (i==0)
-                {
-                    Console.Write("".PadRight(myIntArray.Length));
-                    Console.WriteLine($"{maxValue}");
-                }
-
-                if (i < rightArray.Length)
-                {
-                    Console.Write("".PadRight(myIntArray.Length - i - 1));
-                    Console.Write($"{rightArray[i]}");
-                }
-
-                if (i < leftArray.Length)
-                {
-
-                    Console.Write("".PadLeft(i + 1 + leftArray.ToList().IndexOf(leftArray[i])));
-                    Console.Write($"{leftArray[i]}");
-
-                }
-
-                Console.WriteLine("");
-            }
+            Task.Delay(1000);
+            printArvoce(array2);
 
         }
 
-     
+        public static void printArvoce(int[] array)
+        {
+            Console.WriteLine($"Array de entrada: [{string.Join(",", array)}]");
 
+            var maxValue = array.Max();
+            int maxIndex = array.ToList().IndexOf(maxValue);
+            var length = array.Length;
+            Console.WriteLine($"Raiz:{maxValue}");
+
+            // changing array to list to use linq
+
+            var arrayList = array.ToList();
+            var leftArray  = arrayList.GetRange(0, maxIndex).OrderByDescending(a => a).ToArray();
+            var rightArray = arrayList.Skip(maxIndex + 1).OrderByDescending(a => a).ToArray();
+
+            Console.WriteLine($"Galhos da esquerda:{string.Join(",", leftArray)}");
+            Console.WriteLine($"Galhos da direita:{string.Join(",", rightArray)}");
+            Console.WriteLine("");
+
+            var cursor = Console.GetCursorPosition();
+            int l = length;
+            int c = cursor.Top + 1;
+            
+            int l2 = length;
+            int c2 = cursor.Top + 1;
+            
+            Console.SetCursorPosition(length, c );
+            Console.WriteLine(maxValue);
+
+            for (int i = 0; i < rightArray.Length; i++)
+            {
+                l++;
+                c++;
+                Console.SetCursorPosition(l, c);
+                Console.WriteLine("\\");
+               
+                c++;
+                l++;
+                Console.SetCursorPosition(l, c );
+                Console.WriteLine($"{rightArray[i]}");
+            }
+
+            for (int i = 0; i < leftArray.Length; i++)
+            {
+                l2--;
+                c2++;
+                Console.SetCursorPosition(l2, c2);
+                Console.WriteLine("/");
+
+                c2++;
+                l2--;
+                Console.SetCursorPosition(l2, c2);
+                Console.WriteLine($"{leftArray[i]}");
+            }
+
+
+        }
+ 
     }
 }

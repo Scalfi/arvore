@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabriel.scalfi\\source\\repos\\arvore\\Arvore\\Arvore.csproj": {}
+    "C:\\Users\\Scalfi\\source\\repos\\Arvore\\Arvore\\Arvore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabriel.scalfi\\source\\repos\\arvore\\Arvore\\Arvore.csproj": {
+    "C:\\Users\\Scalfi\\source\\repos\\Arvore\\Arvore\\Arvore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabriel.scalfi\\source\\repos\\arvore\\Arvore\\Arvore.csproj",
+        "projectUniqueName": "C:\\Users\\Scalfi\\source\\repos\\Arvore\\Arvore\\Arvore.csproj",
         "projectName": "Arvore",
-        "projectPath": "C:\\Users\\gabriel.scalfi\\source\\repos\\arvore\\Arvore\\Arvore.csproj",
-        "packagesPath": "C:\\Users\\gabriel.scalfi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabriel.scalfi\\source\\repos\\arvore\\Arvore\\obj\\",
+        "projectPath": "C:\\Users\\Scalfi\\source\\repos\\Arvore\\Arvore\\Arvore.csproj",
+        "packagesPath": "C:\\Users\\Scalfi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Scalfi\\source\\repos\\Arvore\\Arvore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gabriel.scalfi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Scalfi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
