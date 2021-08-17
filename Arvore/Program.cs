@@ -87,7 +87,13 @@ namespace Arvore
                 Console.WriteLine($"{leftArray[i]}");
             }
 
-            Console.WriteLine($"");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
 
     }
