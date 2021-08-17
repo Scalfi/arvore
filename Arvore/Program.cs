@@ -38,7 +38,7 @@ namespace Arvore
 
             var maxValue = array.Max();
             int maxIndex = array.ToList().IndexOf(maxValue);
-            var length = array.Length;
+            var length = array.Length * 2;
             Console.WriteLine($"Raiz:{maxValue}");
 
             // changing array to list to use linq
