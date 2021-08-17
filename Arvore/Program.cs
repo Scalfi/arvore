@@ -38,6 +38,7 @@ namespace Arvore
 
             var maxValue = array.Max();
             int maxIndex = array.ToList().IndexOf(maxValue);
+            var length = array.Length;
             Console.WriteLine($"Raiz:{maxValue}");
 
             // changing array to list to use linq
@@ -50,68 +51,43 @@ namespace Arvore
             Console.WriteLine($"Galhos da direita:{string.Join(",", rightArray)}");
             Console.WriteLine("");
 
+            var cursor = Console.GetCursorPosition();
+            int l = length;
+            int c = cursor.Top + 1;
+            
+            int l2 = length;
+            int c2 = cursor.Top + 1;
+            
+            Console.SetCursorPosition(length, c );
+            Console.WriteLine(maxValue);
 
-
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < rightArray.Length; i++)
             {
-                if (i == 0)
-                {
-                    Console.Write("".PadRight(array.Length));
-                    Console.WriteLine($"{maxValue}");
-                }
-
-                if (i < leftArray.Length)
-                {
-                    Console.Write("".PadRight(array.Length - i - 1));
-                    Console.Write($"/");
-
-                }
-
-                if (i < rightArray.Length)
-                {
-                    if (i < leftArray.Length)
-                    {
-                        Console.Write("".PadLeft(i + 1 + rightArray.ToList().IndexOf(rightArray[i])));
-                        Console.Write($"\\");
-
-                    }
-                    else
-                    {
-                        Console.Write("".PadRight(array.Length - i));
-                        Console.Write("".PadLeft(i + 1 + rightArray.ToList().IndexOf(rightArray[i])));
-                        Console.Write($"\\");
-                    }
-
-                }
-
-                Console.WriteLine("");
-
-
-                if (i < leftArray.Length)
-                {
-                    Console.Write("".PadRight(array.Length - i - 2));
-                    Console.Write($"{leftArray[i]}");
-
-                }
-
-                if (i < rightArray.Length)
-                {
-                    if( i < leftArray.Length)
-                    {
-                        Console.Write("".PadLeft(i + 2 + rightArray.ToList().IndexOf(rightArray[i])));
-                        Console.Write($"{rightArray[i]}");
-
-                    } else
-                    {
-                        Console.Write("".PadRight(array.Length - i));
-                        Console.Write("".PadLeft(i + 2 + rightArray.ToList().IndexOf(rightArray[i])));
-                        Console.Write($"{rightArray[i]}");
-                    }
-                   
-                }
-
-                Console.WriteLine("");
+                l++;
+                c++;
+                Console.SetCursorPosition(l, c);
+                Console.WriteLine("\\");
+               
+                c++;
+                l++;
+                Console.SetCursorPosition(l, c );
+                Console.WriteLine($"{rightArray[i]}");
             }
+
+            for (int i = 0; i < leftArray.Length; i++)
+            {
+                l2--;
+                c2++;
+                Console.SetCursorPosition(l2, c2);
+                Console.WriteLine("/");
+
+                c2++;
+                l2--;
+                Console.SetCursorPosition(l2, c2);
+                Console.WriteLine($"{leftArray[i]}");
+            }
+
+
         }
  
     }
